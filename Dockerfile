@@ -12,4 +12,4 @@ ENV DISPLAY=:99
 # install selenium
 RUN pip install -r requirements.txt
 
-CMD ["python","-m","unittest","Tests/test_google.py"]
+CMD ["python","-m","unittest","Tests/"]

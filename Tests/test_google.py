@@ -9,7 +9,8 @@ class SearchTest(unittest.TestCase):
     """A sample test class to show how page object works"""
 
     def setUp(self):
-        # This specific set of options are needed for docker
+        # This specific set of options are needed for docker or local headless executions
+        # If you want to see it running live, comment all options
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
         options.add_argument('--disable-dev-shm-usage')
@@ -26,8 +27,6 @@ class SearchTest(unittest.TestCase):
         search_page.set_query()
         search_page.click_search()
         now = datetime.now()
-        timestamp = now.strftime("%m%d%Y%H%M")
-        self.driver.save_screenshot(f'screenshots/{timestamp}.png')
         assert search_page.results_visible()
 
     def tearDown(self):
@@ -36,5 +35,4 @@ class SearchTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-    # SearchSuite = unittest.TestLoader().loadTestsFromTestCase(SearchTest)
-    # unittest.TextTestRunner(verbosity=2).run(SearchSuite)
+

@@ -11,8 +11,16 @@ Python + unittest + selenium = `<3`
 
 ## Local setup
 
+#### NOTE: This readme assumes you are using MacOS with Homebrew installed.
+Check your python installation using `which python`
+If you already have `Python3` you can skip to step 2
+
 
 1. Install `python3` 
+```bash
+$ brew install python
+```
+
 2. Install `virtualenv` 
 ```bash
 $ pip3 install virtualenv
@@ -20,10 +28,10 @@ $ pip3 install virtualenv
 
 3. Create a new virtualenv
 ```bash
-$ virtualenv -p python3 your_env_name # env name can be anything
+$ virtualenv -p python3 your_env_name # env name can be anything you want
 ```
 
-4. Start the environment
+4. Activate the environment
 ```bash
 $ source your_env_name/bin/activate
 ```
@@ -35,8 +43,9 @@ $ pip install -r requirements.txt
 
 6. Install Chromedriver
 ```bash
-$ wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`/chromedriver_linux64.zip
-$ unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
+$ brew tap homebrew/cask
+
+$ brew cask install chromedriver
 ```
 
 6. You're done!

@@ -4,7 +4,7 @@ USER root
 WORKDIR /test-automation
 COPY . .
 
-RUN ./prepare-build.sh
+RUN ./install-chrome-and-driver.sh
 
 # set display port to avoid crash
 ENV DISPLAY=:99
